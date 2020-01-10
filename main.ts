@@ -23,6 +23,9 @@ function hero () {
 function score () {
     info.changeScoreBy(1)
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    overlap()
+})
 function overlap () {
     game.over(false)
 }
@@ -46,9 +49,6 @@ function projectile () {
 . 7 7 7 7 f f f f f f f 7 7 7 . 
 `, 0, 0)
 }
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    overlap()
-})
 let projectile2: Sprite = null
 let hero2: Sprite = null
 hero()
